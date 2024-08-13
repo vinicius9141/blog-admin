@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Input, Button, Heading, Text } from "@chakra-ui/react";
+import { Box, Input, Button, Heading, Text, Link } from "@chakra-ui/react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -20,6 +20,10 @@ function Login() {
     }
   };
 
+  const handleCreateUser = () => {
+    navigate("/create-user");
+  };
+
   return (
     <Box maxW="md" mx="auto" mt="8">
       <Heading mb="6" textAlign="center">Login de Autores</Heading>
@@ -37,9 +41,10 @@ function Login() {
         onChange={(e) => setPassword(e.target.value)}
         mb={4}
       />
-      <Button onClick={handleLogin} colorScheme="teal" width="full">
+      <Button onClick={handleLogin} colorScheme="teal" width="full" mb={4}>
         Entrar
       </Button>
+      <Text textAlign="center">Não tem uma conta? <Link color="teal.500" onClick={handleCreateUser}>Crie uma agora</Link></Text>
     </Box>
   );
 }

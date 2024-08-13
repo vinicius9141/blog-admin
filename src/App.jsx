@@ -11,10 +11,9 @@ import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
 import UserManagement from "./components/UserManagement";
-import CreateUser from "./components/CreateUser";
+import CreateUser from "./components/CreateUser"; // Importando o componente CreateUser
 import UserList from "./components/UserList";
 import { AuthProvider } from "./authContext";
-import AdBlockerPopup from "./components/AdBlockerPopup"; // Certifique-se de importar o componente
 
 function App() {
   return (
@@ -22,13 +21,12 @@ function App() {
       <AuthProvider>
         <Router>
           <NavBar />
-          <AdBlockerPopup /> {/* Mover o pop-up para fora das rotas */}
           <Box p={4}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/article/:id" element={<ArticlePage />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/create-user" element={<CreateUser />} />
+              <Route path="/create-user" element={<CreateUser />} /> {/* Rota para criar usuário */}
               <Route
                 path="/admin"
                 element={
