@@ -57,7 +57,7 @@ function ArticlePage() {
   const imageUrl = article.imageUrl || extractImageUrl(article.content);
 
   return (
-    <Box p={5}>
+    <Box p={5} className="conteiner">
       <Heading mb={4}>{article.title}</Heading>
       {imageUrl && (
         <Image src={imageUrl} alt={article.title} width="100%" height="auto" mb={4} borderRadius="lg" />
