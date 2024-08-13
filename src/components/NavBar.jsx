@@ -63,9 +63,13 @@ function NavBar() {
               </Button>
             </>
           )}
-          {user && (
+          {user ? (
             <Button onClick={handleLogout} colorScheme="teal" variant="ghost">
               Sair
+            </Button>
+          ) : (
+            <Button as={Link} to="/login" colorScheme="teal" variant="ghost">
+              Login
             </Button>
           )}
         </Flex>
@@ -100,9 +104,13 @@ function NavBar() {
                   </MenuItem>
                 </>
               )}
-              {user && (
+              {user ? (
                 <MenuItem onClick={handleLogout}>
                   Sair
+                </MenuItem>
+              ) : (
+                <MenuItem as={Link} to="/login">
+                  Login
                 </MenuItem>
               )}
             </MenuList>
